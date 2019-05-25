@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <code>cyco_news</code>
+    <name>Cyco News/Events Page</name>
+    <version>1.1</version>
+    <author>cycotech</author>
+    <file path="admin/controller/common/column_left.php">
+        <operation>
+            <search trim="true" index="0"><![CDATA[
+				// Marketing
+            ]]></search>
+            <add position="before" trim="false" offset="0"><![CDATA[
+            $news = array();
+			if ($this->user->hasPermission('access', 'news/article')) {
+				$news[] = array(
+					'name'	   => $this->language->get('text_news_article'),
+					'href'     => $this->url->link('news/article', 'token=' . $this->session->data['token'], true),
+					'children' => array()
+				);
+			}
+			if ($this->user->hasPermission('access', 'news/setting')) {
+				$news[] = array(
+					'name'	   => $this->language->get('text_news_setting'),
+					'href'     => $this->url->link('news/setting', 'token=' . $this->session->data['token'], true),
+					'children' => array()
+				);
+			}
+			if ($news) {
+				$data['menus'][] = array(
+					'id'       => 'menu-blog',
+					'icon'	   => 'fa-pencil-square-o',
+					'name'	   => $this->language->get('text_news'),
+					'href'     => '',
+					'children' => $news
+				);
+			}
+            ]]></add>
+        </operation>
+    </file>
+	
+	<file path="admin/language/en-gb/common/column_left.php">
+        <operation>
+            <search trim="true" index="0"><![CDATA[
+				$_['text_other_status']              = 'Other Statuses';
+            ]]></search>
+            <add position="after" trim="false" offset="0"><![CDATA[
+				$_['text_news']                        = 'News/Events';
+				$_['text_news_article']                = 'Articles';
+				$_['text_news_setting']                = 'Settings';
+            ]]></add>
+        </operation>
+    </file>
+	
+	<file path="catalog/view/theme/default/template/common/footer.tpl">
+        <operation>
+            <search trim="true" index="0"><![CDATA[
+          <?php foreach ($informations as $information) { ?>
+            ]]></search>
+            <add position="before" trim="false" offset="0"><![CDATA[
+				<li><a href="<?php echo $news['href']; ?>"><?php echo $news['name']; ?></a></li>
+            ]]></add>
+        </operation>
+    </file>
+	
+	<file path="catalog/controller/common/footer.php">
+        <operation>
+            <search trim="true" index="0"><![CDATA[
+				$data['informations'] = array();
+            ]]></search>
+            <add position="before" trim="false" offset="0"><![CDATA[
+				$data['blog'] = array(
+					'name' => $this->config->get('cyco_news_home_page_name'),
+					'href'  => $this->url->link('news/events')
+				);
+            ]]></add>
+        </operation>
+    </file>
+	
+</modification>
