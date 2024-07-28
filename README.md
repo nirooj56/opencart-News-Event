@@ -1,10 +1,11 @@
-# opencart-News-Event
+# Opencart-News-Event
 News/Event Page for Opencart
 
 # AUTOMATIC INSTALLATION (Cyco News/Event Article Blog Page)
 -------------------------------------------------------------------------
-# ATTENTION: you need OC2 Extension Installer configured properly and working
-##If Error occurs while uploading then you probably havenot configured Extention Installer
+# ATTENTION
+You need OC2 Extension Installer configured properly and working
+## If Error occurs while uploading then you probably havenot configured Extention Installer
 * Download & Install "Quick Fix for OpenCart new extension installer"
 -------------------------------------------------------------------------
 ## Installation
@@ -18,8 +19,6 @@ News/Event Page for Opencart
 Blog on your site: yourstore.com/index.php?route=news/events
 
 -------------------------------------------------------------------------
-If you had any question about this extension or integration on your website, you can contact with me using e-mail cycotechnology@gmail.com
--------------------------------------------------------------------------
 Changelog:
 v2.0
 Released for Opencart 3
@@ -31,4 +30,4 @@ First Releaed.
 Compability: 2.3.0.0, 2.3.0.1, 2.3.0.2
 Date: Feb, 09 2017.
 -------------------------------------------------------------------------
-Brought to you by CYCO <http://nirojbista.com.np> <http://twitter.com/cycotechnology> <https://github.com/nirooj56/opencart-News-Event>
+Brought to you by CYCO <http://nirojbista.com.np>
